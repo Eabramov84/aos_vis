@@ -86,8 +86,8 @@ func New(configJSON json.RawMessage) (adapter dataprovider.DataAdapter, err erro
 	}
 
 	localAdapter.upgrader = websocket.Upgrader{
-		ReadBufferSize:  1024,
-		WriteBufferSize: 1024,
+		ReadBufferSize:  1024, // nolint:gomnd // 1Kb
+		WriteBufferSize: 1024, // nolint:gomnd // 1Kb
 	}
 
 	serveMux := http.NewServeMux()
